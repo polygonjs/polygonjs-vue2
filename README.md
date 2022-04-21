@@ -1,9 +1,14 @@
-<div style='text-align:center'>
+
+<p align="center">
 <img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/logos.png?raw=true" alt="Vuejs + Polygonjs"></img>
+</p>
 
-[Live Demo](https://polygonjs.com/vue2) | [Polygonjs](https://polygonjs.com) | [Forum](https://polygonjs.com/forum) | [Discord](https://polygonjs.com/discord)
-
-</div>
+<p align="center">
+<a href="https://polygonjs.com/vue2">Live Demo</a> |
+<a href="https://polygonjs.com">Polygonjs</a> |
+<a href="https://polygonjs.com/forum">Forum</a> |
+<a href="https://polygonjs.com/discord">Discord</a>
+</p>
 
 
 # Vue 2 Component for Polygonjs
@@ -89,7 +94,6 @@ This will load your scene asynchronously. This means that the rest of the page w
 | name | args | description |
 |---|----|----|
 | **progress** | *progressAmount* | This gives you the progress so that you can display your own progress bar or custom loading component if you want to use another than the one provided. |
-|---|----|----|
 | **sceneready** | *scene* | Once the scene is being loaded, you may want to have access to it, so that you can update it when a component prop or state changes. See how the components for the [live demo](https://polygonjs.com/vue2): [scene 01](https://github.com/polygonjs/polygonjs-vue2-example/blob/main/src/views/Scene01.vue) and [scene 02](https://github.com/polygonjs/polygonjs-vue2-example/blob/main/src/views/Scene02.vue) |
 
 
