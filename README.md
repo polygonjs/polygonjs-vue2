@@ -17,14 +17,14 @@ This is a vuejs component to easily import WebGL scenes created with the node-ba
 
 Polygonjs allows you to create complex and procedural scenes with a visual editor, and you can import them with vuejs, and benefit from its reactive states. You can then update the 3D scene from anything in your vuejs setup.
 
-<table style="margin=0px;padding:0px">
-	<tr style="margin=0px;padding:0px">
-		<td style="margin=0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/scene_01.gif?raw=true"></img></td>
-		<td style="margin=0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/scene_02.gif?raw=true"></img></td>
+<table style="margin:0px;padding:0px">
+	<tr style="margin:0px;padding:0px">
+		<td style="margin:0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/scene_01.gif?raw=true"></img></td>
+		<td style="margin:0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/scene_02.gif?raw=true"></img></td>
 	</tr>
-	<tr style="margin=0px;padding:0px">
-		<td style="margin=0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/scene_03.gif?raw=true"></img></td>
-		<td style="margin=0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/vue_example.gif?raw=true"></img></td>
+	<tr style="margin:0px;padding:0px">
+		<td style="margin:0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/scene_03.gif?raw=true"></img></td>
+		<td style="margin:0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/vue_example.gif?raw=true"></img></td>
 	</tr>
 </table>
 
