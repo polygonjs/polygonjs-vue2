@@ -1,16 +1,27 @@
-![Vuejs + Polygonjs](https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/logos.png?raw=true)
+<div style='text-align:center'>
+<img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/logos.png?raw=true" alt="Vuejs + Polygonjs"></img>
 
 [Live Demo](https://polygonjs.com/vue2) | [Polygonjs](https://polygonjs.com) | [Forum](https://polygonjs.com/forum) | [Discord](https://polygonjs.com/discord)
+
+</div>
+
+
 # Vue 2 Component for Polygonjs
 
 This is a vuejs component to easily import WebGL scenes created with the node-based editor [Polygonjs](https://polygonjs.com).
 
 Polygonjs allows you to create complex and procedural scenes with a visual editor, and you can import them with vuejs, and benefit from its reactive states. You can then update the 3D scene from anything in your vuejs setup.
 
-![Scene 1 inside Polygonjs Editor](https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/scene_01.gif?raw=true)
-![Scene 2 inside Polygonjs Editor](https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/scene_02.gif?raw=true)
-![Scene 3 inside Polygonjs Editor](https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/scene_03.gif?raw=true)
-![All 3 Scenes together](https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/vue_example.gif?raw=true)
+<table style="margin=0px;padding:0px">
+	<tr style="margin=0px;padding:0px">
+		<td style="margin=0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/scene_01.gif?raw=true"></img></td>
+		<td style="margin=0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/scene_02.gif?raw=true"></img></td>
+	</tr>
+	<tr style="margin=0px;padding:0px">
+		<td style="margin=0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/scene_03.gif?raw=true"></img></td>
+		<td style="margin=0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/vue/vue_example.gif?raw=true"></img></td>
+	</tr>
+</table>
 
 [Live Demo >>](https://polygonjs.com/vue2)
 
