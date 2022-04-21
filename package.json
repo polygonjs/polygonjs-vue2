@@ -1,7 +1,6 @@
 {
   "name": "@polygonjs/vue2",
   "version": "0.1.0",
-  "private": true,
   "main": "dist/@polygonjs/vue2.common",
   "scripts": {
     "serve": "vue-cli-service serve",
