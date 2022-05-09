@@ -11,38 +11,10 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { PolyEventName } from "@polygonjs/polygonjs/dist/src/engine/io/common/EventsDispatcher";
-import { PolyScene } from "@polygonjs/polygonjs/dist/src/engine/scene/PolyScene";
 
-import {
-  defineComponent,
-  Ref,
-  ref,
-  computed,
-  onMounted,
-  onBeforeUnmount,
-} from "@vue/composition-api";
-import { Context } from "mocha";
-import { BaseViewerType } from "@polygonjs/polygonjs/dist/src/engine/viewers/_Base";
-
-interface LoadSceneOptions {
-  onProgress: (progress: number) => void;
-  domElement: HTMLElement;
-  printWarnings: boolean;
-}
-interface LoadedData {
-  scene: PolyScene;
-  viewer: BaseViewerType | undefined;
-}
-type LoadScene = (options: LoadSceneOptions) => Promise<LoadedData>;
-interface PolySceneProps {
-  displayLoadingProgressBar: boolean;
-  printWarnings: boolean;
-  loadFunction: LoadScene;
-}
-
-export default defineComponent({
+export default {
   name: "Polygonjs-Scene",
   props: {
     // sceneName: String,
@@ -58,67 +30,66 @@ export default defineComponent({
       type: Function,
     },
   },
-  set(props: PolySceneProps, context: Context) {
-    const progress = ref(0);
-    const mountPoint: Ref<HTMLElement | null> = ref(null);
-    let scene: PolyScene | undefined;
-    let viewer: BaseViewerType | undefined;
+  data: function () {
+    return {
+      progress: 0,
+      scene: null,
+      viewer: null,
+    };
+  },
+  mounted: async function () {
+    const domElement = this.$refs.mountpoint;
+    const { loadFunction } = this.$props;
 
-    onMounted(_loadSceneAndViewer);
-
-    onBeforeUnmount(_disposeSceneAndViewer);
-
-    async function _loadSceneAndViewer() {
-      const domElement = mountPoint.value;
-      if (!domElement) {
-        return;
-      }
-      const { loadFunction } = props;
-      const loadedData = await loadFunction({
-        onProgress: (p) => {
-          progress.value = p;
-          context.emit("progress", p);
-        },
-        domElement,
-        printWarnings: props.printWarnings,
-      });
-      scene = loadedData.scene;
-      viewer = loadedData.viewer;
-      const sceneReady = PolyEventName.SCENE_READY.toLowerCase().replace(
-        "poly",
-        ""
-      );
-      const viewerMounted = PolyEventName.VIEWER_MOUNTED.toLowerCase().replace(
-        "poly",
-        ""
-      );
-      context.emit(sceneReady, scene);
-      context.emit(viewerMounted, viewer);
+    const loadedData = await loadFunction({
+      onProgress: (progress) => {
+        this.$data.progress = progress;
+        this.$emit("progress", progress);
+      },
+      domElement,
+      printWarnings: this.$props.printWarnings,
+    });
+    const { scene, viewer } = loadedData;
+    this.$data.scene = scene;
+    this.$data.viewer = viewer;
+    const sceneReady = PolyEventName.SCENE_READY.toLowerCase().replace(
+      "poly",
+      ""
+    );
+    const viewerMounted = PolyEventName.VIEWER_MOUNTED.toLowerCase().replace(
+      "poly",
+      ""
+    );
+    this.$emit(sceneReady, scene);
+    this.$emit(viewerMounted, viewer);
+  },
+  beforeDestroy: function () {
+    const scene = this.$data.scene;
+    if (scene) {
+      scene.dispose();
     }
-
-    function _disposeSceneAndViewer() {
-      scene?.dispose();
-      viewer?.dispose();
+    const viewer = this.$data.viewer;
+    if (viewer) {
+      viewer.dispose();
     }
-
-    const progressBarClassObject = computed(() => {
-      const visible = progress.value > 0 && progress.value < 1;
+  },
+  computed: {
+    progressBarClassObject: function () {
+      const visible = this.$data.progress > 0 && this.$data.progress < 1;
       return {
         fadeable: true,
         visible: true,
         hidden: !visible,
       };
-    });
-    const progressBarBarStyleObject = computed(() => {
-      const percent = Math.round(progress.value * 100);
+    },
+    progressBarBarStyleObject: function () {
+      const percent = Math.round(this.$data.progress * 100);
       return {
         width: `${percent}%`,
       };
-    });
-
-    return { mountPoint, progressBarClassObject, progressBarBarStyleObject };
+    },
   },
-});
+};
 </script>
 
 <style scoped>

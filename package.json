@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@polygonjs/polygonjs": "^1.1.258",
-    "@vue/composition-api": "^1.6.1",
     "core-js": "^3.8.3",
     "vue": "^2.6.14"
   },
