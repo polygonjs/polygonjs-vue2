@@ -9,7 +9,8 @@
     "build": "vue-cli-service build --target lib --name @polygonjs/vue2 ./src/main.ts && node config/addTypings.js"
   },
   "dependencies": {
-    "@polygonjs/polygonjs": "^1.1.252",
+    "@polygonjs/polygonjs": "^1.1.258",
+    "@vue/composition-api": "^1.6.1",
     "core-js": "^3.8.3",
     "vue": "^2.6.14"
   },
